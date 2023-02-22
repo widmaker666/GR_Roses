@@ -18,7 +18,7 @@ class AgedBrie extends Item {
   }
 
   updateItemQuality() {
-    console.log(`  > Using 'AgedBrie' quality calculation with '${this.name}'`);
+    console.log(`  > Utilisation du calcul de qualité "AgedBrie" avec '${this.name}'`);
     this.sellIn--;
     (this.quality < 50) ? (this.quality++) : (this.quality = 50);
   }
@@ -35,7 +35,7 @@ class Sulfuras extends Item {
   }
 
   updateItemQuality() {
-    console.log(`  > Using 'Sulfuras' quality calculation (i.e. nothing changes!) with '${this.name}'`);
+    console.log(`  > En utilisant le calcul de la qualité "Sulfuras" (c'est-à-dire que rien ne change !) avec le calcul de la qualité "Sulfuras". '${this.name}'`);
     // Does nothing (except logging) as Sulfuras has no expiration date, nor any decrease in quality
     // However keeping this method in case any update in the rules was needed
   }
@@ -50,14 +50,14 @@ class Sulfuras extends Item {
 // Its quality falls down and stay at 0 (never lower) once the concert date overpassed, though.
 class BackstagePasses extends Item {
 
-  constructor(name="Backstage passes for the upcoming TAFKAL80ETC concert", sellIn, quality){
+  constructor(name="Des laissez-passer pour les coulisses du prochain concert de TAFKAL80ETC.", sellIn, quality){
     super(name,sellIn,quality);
     this.quality < 0 ? this.quality = 0 : this.quality > 50 ? this.quality = 50 : null;
     console.log(`  > Creating a '${this.name}' item`);
   }
 
   updateItemQuality() {
-    console.log(`  > Using 'BackstagePasses' quality calculation with '${this.name}'`);
+    console.log(`  > Utilisation du calcul de la qualité des "BackstagePass" avec la méthode de calcul de la qualité de l'eau. '${this.name}'`);
     this.sellIn--;
     if (this.sellIn > 10) {
       (this.quality < 50) ? (this.quality++) : (this.quality = 50);
@@ -93,10 +93,10 @@ class GenericItem extends Item {
     this.sellIn--;
     let qualityDecreaseSpeed = 1;
     if (this.isConjured) {
-      console.log(`  > Using 'Conjured Item' quality calculation (i.e. decreasing 2x faster) with '${this.name}'`);
+      console.log(`  > Utilisation du calcul de la qualité de l'objet conjuré (c.-à-d. diminution 2x plus rapide) avec le calcul de la qualité de l'objet. '${this.name}'`);
       qualityDecreaseSpeed = 2;
     } else {
-      console.log(`  > Using 'Generic Item' quality calculation with '${this.name}'`);
+      console.log(`  > Utilisation du calcul de la qualité d'un "élément générique" avec '${this.name}'`);
     }
     this.sellIn < 0 
         ? (this.quality >= 2*qualityDecreaseSpeed ? this.quality -= 2*qualityDecreaseSpeed : this.quality = 0)

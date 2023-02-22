@@ -24,112 +24,112 @@ let myTest;
 
 describe("Gilded Rose Test Bank", function() {
 
-  it("Test type #1.a - Quality decreases by 1 point every day before deadline", function() {
+  it("Test type #1.a -La qualité diminue d'un point chaque jour avant l'échéance.", function() {
     myTest = updatedTestItems[0];
     console.log(`\n - ${myTest.name}`);
     expect(updatedTestItems[0].sellIn).toBe(9);
     expect(updatedTestItems[0].quality).toBe(19);
   });
 
-  it("Test type #1.b - Quality decreases by 1 point every day before deadline", function() {
+  it("Test type #1.b - La qualité diminue d'un point chaque jour avant l'échéance.", function() {
     myTest = updatedTestItems[1];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(4);
     expect(myTest.quality).toBe(6);
   });
 
-  it("Test type #2.a - Quality decreases by 2 points every day, once beyond deadline", function() {
+  it("Test type #2.a - La qualité diminue de 2 points par jour, une fois le délai dépassé.", function() {
     myTest = updatedTestItems[2];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(-1);
     expect(myTest.quality).toBe(0);
   });
 
-  it("Test type #2.b - Quality decreases by 2 points every day, once beyond deadline", function() {
+  it("Test type #2.b - La qualité diminue de 2 points par jour, une fois le délai dépassé.", function() {
     myTest = updatedTestItems[3];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(-3);
     expect(myTest.quality).toBe(1);
   });
 
-  it("Test type #3.a - Quality increases by 1 daily for Aged Brie", function() {
+  it("Test type #3.a - La qualité augmente de 1 par jour pour le brie vieilli.", function() {
     myTest = updatedTestItems[4];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(1);
     expect(myTest.quality).toBe(6);
   });
 
-  it("Test type #3.a - Quality cannot be less than 0 (from creation ahead) for Aged Brie", function() {
+  it("Test type #3.a - La qualité ne peut pas être inférieure à 0 (de la création à venir) pour le Brie vieilli.", function() {
     myTest = updatedTestItems[5];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(1);
     expect(myTest.quality).toBe(1);
   });
 
-  it("Test type #3.b - Quality increases by 1 daily for Backstage tickets when concert date in more than 10 days", function() {
+  it("Test type #3.b - La qualité augmente de 1 par jour pour les billets Backstage lorsque la date du concert est supérieure à 10 jours.", function() {
     myTest = updatedTestItems[6];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(14);
     expect(myTest.quality).toBe(50);
   });
 
-  it("Test type #4 - Quality increases by 2 daily for Backstage tickets when concert date between 10 and 6 days (included)", function() {
+  it("Test type #4 - La qualité augmente de 2 par jour pour les billets Backstage lorsque la date du concert se situe entre 10 et 6 jours (inclus).", function() {
     myTest = updatedTestItems[7];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(9);
     expect(myTest.quality).toBe(50);
   });
 
-  it("Test type #5 - Quality increases by 3 daily for Backstage tickets when concert date between 5 and actual show day (included)", function() {
+  it("Test type #5 - La qualité augmente de 3 par jour pour les billets Backstage lorsque la date du concert se situe entre 5 et le jour du spectacle (inclus).", function() {
     myTest = updatedTestItems[8];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(4);
     expect(myTest.quality).toBe(50);
   });
 
-  it("Test type #6 - Quality of Backstage tickets falls down to 0 once beyond concert date", function() {
+  it("Test type #6 - La qualité des billets Backstage tombe à zéro une fois la date du concert dépassée.", function() {
     myTest = updatedTestItems[9];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(-1);
     expect(myTest.quality).toBe(0);
   });
 
-  it("Test type #7.a - Sulfuras quality and sell in values are 0 and 80 from creation even if no values are passed to the constructor", function() {
+  it("Test type #7.a - Les valeurs de qualité et de vente des sulfuras sont de 0 et 80 dès la création, même si aucune valeur n'est passée au constructeur.", function() {
     myTest = updatedTestItems[10];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(0);
     expect(myTest.quality).toBe(80);
   });
 
-  it("Test type #7.b - Sulfuras quality and sell in values are 0 and 80 from creation even if hazardous values are passed to the constructor", function() {
+  it("Test type #7.b - Les valeurs de qualité et de vente des sulfuras sont de 0 et 80 dès la création, même si des valeurs dangereuses sont passées au constructeur.", function() {
     myTest = updatedTestItems[11];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(0);
     expect(myTest.quality).toBe(80);
   });
 
-  it("Test type #7.c - Sulfuras quality and sell in values remain 0 and 80 from creation", function() {
+  it("Test type #7.c - Les valeurs de qualité et de vente de Sulfuras restent 0 et 80 depuis la création.", function() {
     myTest = updatedTestItems[12];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(0);
     expect(myTest.quality).toBe(80);
   });
 
-  it("Test type #7.c - Sulfuras quality and sell in values are 0 and 80 from creation even if negative values are passed to the constructor", function() {
+  it("Test type #7.c - Les valeurs de qualité et de vente des sulfuras sont de 0 et 80 dès la création, même si des valeurs négatives sont transmises au constructeur.", function() {
     myTest = updatedTestItems[13];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(0);
     expect(myTest.quality).toBe(80);
   });
 
-  it("Test type #8 - Conjured object generally loose 2 quality points per day", function() {
+  it("Test type #8 - Les objets conjurés perdent généralement 2 points de qualité par jour.", function() {
     myTest = updatedTestItems[14];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(2);
     expect(myTest.quality).toBe(0);
   });
 
-  it("Test type #9 - Conjured object loose 4 quality points per day, once their 'sell in' date overpassed", function() {
+  it("Test type #9 - Les objets conjurés perdent 4 points de qualité par jour, une fois leur date de péremption dépassée.", function() {
     myTest = updatedTestItems[15];
     console.log(`\n - ${myTest.name}`);
     expect(myTest.sellIn).toBe(-1);
